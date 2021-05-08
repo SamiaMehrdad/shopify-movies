@@ -4,8 +4,8 @@ import './App.css';
 function App() {
 
   const [searchResult, setSearchResult] = useState([]);
-  const [seed, setSeed] = useState('');
-  const [noms, setNoms] = useState([]);
+  const [searchWord, setSearchWord] = useState('');
+  const [nominees, setNominees] = useState([]);
 
   //----------------------------------
   async function searchAPI( title )
@@ -37,7 +37,7 @@ function App() {
               }
             })
       setSearchResult([...result]);
-      setSeed(title);
+      setSearchWord(title);
       return result;
     });
   }
@@ -52,12 +52,14 @@ function App() {
     }
     return result;
   }
+  
   //----------------------------------
+  // Check if nominations<5 then add item to nominations 
   function addNom(e) 
   {
-    let name = e.currentTarget.getAttribute("name"); 
-    if( noms.length < 5 && noms.indexOf(name) < 0 )
-      setNoms( [...noms, name] );
+    let name = e.currentTarget.getAttribute("item"); 
+    if( nominees.length < 5 && nominees.indexOf(name) < 0 )
+      setNominees( [...nominees, name] );
   }
   //----------------------------------
   const remNom = (e) =>{
@@ -73,7 +75,7 @@ function App() {
       <div className="border">
         {'\u{1F50D}'} {/* long unicode formatting: search icon */}
         <input type="text" 
-                name="search" 
+                item="search" 
                 placeholder="some letters"
                 onChange={ 
                           e => {
@@ -85,42 +87,43 @@ function App() {
       </div>
     </div>
     <div className="half shaded short">
-      <h4>Results for '{seed}'</h4>
+      <h4>Results for '{searchWord}'</h4>
       <div className="inner">
-        {searchResult.length? 
-          searchResult.map( (movie) => noms.indexOf(movie) < 0 ? 
-                                        <li className="nombar">
-                                         {movie}
-                                         {noms.length < 5 ?
-                                           <span className="hide"
-                                                name={movie}
-                                                onClick={addNom}>
-                                             Nominate 
-                                           </span>
-                                          : null}
-                                        </li>
-                                      : null
-                                     )
-          : <p> No matched movie </p>}
+        {searchResult.length? searchResult.map(
+                    (item) => 
+                      nominees.indexOf(item) < 0 ? 
+                        <li className="nombar">
+                          {item}
+                          {nominees.length < 5 ?
+                            <span className="hide"
+                                  item={item}
+                                  onClick={addNom}>
+                              Nominate 
+                            </span>
+                          : null}
+                        </li>
+                      : null
+                      )
+          : <p> No matched movie </p>
+        }
       </div>
     </div>
     <div className="half shaded short">
       <h4>Nominations</h4>
         <div className="inner">
-        {noms.length?
-          noms.map( nom => <li className="nombar" 
-                               name={nom}>
-                            {nom}
+        {nominees.length? nominees.map(
+                    item => <li className="nombar" >
+                            {item}
                             <span className="hide"
-                                  name={nom}
+                                  name={item}
                                   onClick={remNom}>
-                                   Remove 
+                              Remove 
                             </span>
                            </li> )
           : <p>Search and add up to 5 nominees.</p>
         } 
         { 
-         noms.length >= 5 ?
+         nominees.length >= 5 ?
           <p className="warning">YOU HAVE SELECTED ALL YOUR 5 NOMINEES.  </p>
           : null
         }

@@ -6,9 +6,27 @@ body{
   overflow: hidden;
   --main: #ddd;
   --green: #0b8;
+  --dark: rgba(0,0,0,.2);
 }
+
+div::-webkit-scrollbar {
+  width: 1vh;
+  border-radius: 1vh; 
+}
+
+div::-webkit-scrollbar-track {
+  border-radius: 1vh; 
+}
+
+div::-webkit-scrollbar-thumb {
+  background: var(--dark);
+  border-radius: 1vh;       
+}
+
+
 div{
-  /* border: 1px solid red; */
+  scrollbar-width: 1vh;
+  scrollbar-color:  #eee var(--main);
 }
 input{
   background: none;
@@ -53,7 +71,7 @@ h4{
   overflow-y: auto;
   /* border: 1px solid rgba(0,0,0,.2); */
   /* border-radius: none;  */
-  font-size: calc(8px + 1.2vmin);
+  font-size: calc(6px + 1.4vmin);
 }
 .round{
   border-radius: 99999px;
@@ -70,12 +88,10 @@ h4{
 }
 
 .shaded{
-  box-shadow: 0 3px 6px #555;
+  box-shadow: 4px 8px 12px 2px rgba(0,0,0,.1);
 }
 
 .nombar{
-  /* border: 1px solid rgba(0,0,0,.1); */
-  
   padding: 2px 0;
   border-radius: 9999px;
 }
@@ -87,16 +103,14 @@ h4{
 
 .nombar:hover > .hide{
   color: var(--green);
-  border-left: 1px solid var(--green);
+  border-left: 1px solid ;
   font-size:  calc(6px + 1vmin);
   padding: .2vh .3vh;
-  /* text-shadow: 0 0 4px #fff; */
 }
 
 .hide{
   color: var(--main);
   right: 0;
-  /* border-radius: 10px 0 0 0 ; */
   float: right;
   cursor: pointer;
 }
