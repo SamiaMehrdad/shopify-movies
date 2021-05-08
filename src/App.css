@@ -1,24 +1,67 @@
 body{
-  background-color: #acb;
+  background-color: #bbb;
   align-items: center;
-  
+  outline: none;
+
+}
+
+input{
+  background: none;
+  margin: 0;
+  border: none;
+  padding: .5vh 0;
+  outline: none;
+  font-size: calc(10px + 1.5vmin);
+}
+h4{
+  margin: 1vh;
 }
 .App {
   text-align: left;
-  min-height: 100vh;
-  font-size: calc(10px + 2vmin);
+  height: 100vh;
   color: #111;
-  padding: 2vh;
+  padding: 4vh;
   width: 80%;
-  /* border: 1px solid red; */
-  margin: 10vh auto;
+  font-size: calc(10px + 1.5vmin);
+  margin: 5vh auto;
 }
 
 .App div{
-  background-color: #ced;
-  box-shadow: 0 2px 5px #555;
-  /* border: 1px solid red; */
-  /* color: blue; */
-  margin: 1vh;
+  background-color: #ccc;
+  margin: 2vh;
   padding: 1vh;
 }
+
+.wide{
+  width: 95%; 
+}
+
+.half{
+  width: 46%;
+  display: inline-block;
+}
+
+.inner{
+  height: 65%;
+  overflow-y: auto;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: 2vh;
+  font-size: calc(8px + 1.2vmin);
+}
+.round{
+  border-radius: 99999px;
+}
+
+.border{
+  border: 1px solid rgba(0,0,0,.4);
+}
+.short{
+  height: 40%;
+  display: inline-block;
+  overflow-y: hidden;
+}
+
+.shaded{
+  box-shadow: 0 2px 5px #555;
+}
+
