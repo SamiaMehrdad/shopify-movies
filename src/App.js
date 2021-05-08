@@ -1,9 +1,11 @@
-import React , { useRef, useState } from 'react';
+import React , { useState } from 'react';
 import './App.css';
 
 function App() {
 
   const [searchResult, setSearchResult] = useState([]);
+  const [seed, setSeed] = useState('');
+
   async function searchAPI( title )
   {
     const OMDB_URL = "http://www.omdbapi.com/?apikey=27c4a699&type=movie&s=";
@@ -24,11 +26,12 @@ function App() {
     let result = [];
     if(resObj.Search )
       resObj.Search.map( movie => {
-        // movie title should be limited to 25 characters + '...'
-          let data = stringLimiter(movie.Title, 45)+' ('+movie.Year+')';
+        // movie title should be limited to 40 characters + '...'
+          let data = stringLimiter(movie.Title, 37)+' ('+movie.Year+')';
           result.push(data);
       })
     setSearchResult([...result]);
+    setSeed(title);
     //console.log(result);
     return result;
     });
@@ -49,7 +52,7 @@ function App() {
   <div className="App">
     <h2>The Shoppies</h2>
     <div className="wide shaded">
-      <p>Movie title</p>
+      <h4>Movie title</h4>
       
       <div className="round border">
         {'\u{1F50D}'} {/* long unicode formatting */}
@@ -65,11 +68,14 @@ function App() {
       </div>
     </div>
     <div className="half shaded short">
-      <h4>Results for xxx</h4>
+      <h4>Results for '{seed}'</h4>
       <div className="inner">
         {/* {formatedSearch ("mission")} */}
         {searchResult.length? 
-          searchResult.map( movie=> <li>{movie}</li> )
+          searchResult.map( movie=> <li className="nombar">
+                                      {movie}
+                                      <span className="hide"> Nominate></span>
+                                    </li> )
           : <p> No matched movie </p>}
       </div>
     </div>
