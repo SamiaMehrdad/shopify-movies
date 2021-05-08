@@ -19,6 +19,7 @@ function App() {
   }
   
   //----------------------------------
+  // Call searchAPI() and return array of results in format of MovieTitle(year)
   function formatedSearch( title )
   {
     if( title.length < 3 )
@@ -43,6 +44,7 @@ function App() {
   }
   
   //----------------------------------
+  // Trim str to max and add '...' at the end if needed
   function stringLimiter( str, max )
   {
     let result = str;
@@ -62,6 +64,7 @@ function App() {
       setNominees( [...nominees, name] );
   }
   //----------------------------------
+  // Remove item from nominees and add it back to searchResult
   const remNom = (e) =>{
     
   }
