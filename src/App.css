@@ -3,9 +3,13 @@ body{
   align-items: center;
   outline: none;
   user-select: none;
-  --main: #ccc;
+  overflow: hidden;
+  --main: #ddd;
+  --green: #0b8;
 }
-
+div{
+  /* border: 1px solid red; */
+}
 input{
   background: none;
   margin: 0;
@@ -16,6 +20,8 @@ input{
 }
 h4{
   margin: 1vh;
+  /* color: var(--green); */
+  /* text-shadow: 0 1px 4px #333; */
 }
 .App {
   text-align: left;
@@ -25,28 +31,27 @@ h4{
   width: 80%;
   font-size: calc(10px + 1.5vmin);
   margin: 5vh auto;
+  /* border: 1px solid blue; */
 }
 
 .App div{
   background-color: var(--main);
-  margin: 2vh;
+  margin: 1vh;
   padding: 1vh;
   border-radius: 2vh;
-}
-
-.wide{
-  width: 95%; 
+  border: 1px solid rgba(0,0,0,.2);
 }
 
 .half{
-  width: 46%;
+  width: 47%;
   display: inline-block;
+  /* outline: 1px solid blue; */
 }
 
 .inner{
-  height: 65%;
+  height: 75%;
   overflow-y: auto;
-  border: 1px solid rgba(0,0,0,.2);
+  /* border: 1px solid rgba(0,0,0,.2); */
   /* border-radius: none;  */
   font-size: calc(8px + 1.2vmin);
 }
@@ -56,6 +61,7 @@ h4{
 
 .border{
   border: 1px solid rgba(0,0,0,.4);
+  /* border: 1px solid #eee; */
 }
 .short{
   height: 40%;
@@ -64,22 +70,27 @@ h4{
 }
 
 .shaded{
-  box-shadow: 0 2px 5px #555;
+  box-shadow: 0 3px 6px #555;
 }
 
 .nombar{
   /* border: 1px solid rgba(0,0,0,.1); */
-  cursor: pointer;
+  
   padding: 2px 0;
+  border-radius: 9999px;
 }
 
 .nombar:hover{
-  /* background-color: #5ca; */
-  border-bottom: 1px solid #0a8;
+  background-color: #eee;
+  /* border-bottom: 1px solid #0a8; */
 }
 
 .nombar:hover > .hide{
-  color: #0a8;
+  color: var(--green);
+  border-left: 1px solid var(--green);
+  font-size:  calc(6px + 1vmin);
+  padding: .2vh .3vh;
+  /* text-shadow: 0 0 4px #fff; */
 }
 
 .hide{
@@ -87,4 +98,17 @@ h4{
   right: 0;
   /* border-radius: 10px 0 0 0 ; */
   float: right;
+  cursor: pointer;
+}
+
+.warning{
+  text-align: center;
+  /* background-color: #bbb; */
+  /* border: 1px solid; */
+  color: #598;
+  /* padding: 1.8vh; */
+  margin: 3vh 0 0;
+  /* border-radius: 2vh; */
+  font-weight: bold;
+  text-shadow: 0 0 4px #fff;
 }
