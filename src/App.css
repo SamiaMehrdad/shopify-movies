@@ -1,5 +1,6 @@
 body{
   background-color: #bbb;
+  /* background-image: url(bg1.png); */
   align-items: center;
   outline: none;
   user-select: none;
@@ -31,6 +32,7 @@ h4{
   font-size: calc(10px + 1.5vmin);
   margin: 5vh auto;
   text-shadow: 0 0 2px #000;
+  /* background-color: rgba(0,0,0,.2); */
 }
 
 .App div{
@@ -52,6 +54,7 @@ h4{
   height: 75%;
   overflow-y: auto;
   font-size: calc(6px + 1.4vmin);
+  transition: all 1s ease;
 }
 
 .round{
@@ -75,6 +78,7 @@ h4{
 .nombar{
   padding: 2px 0;
   border-radius: 9999px;
+  /* transition: all .1s ease; */
 }
 
 .nombar:hover{
@@ -93,8 +97,11 @@ h4{
   right: 0;
   float: right;
   cursor: pointer;
+  transition: all .3s ease;
 }
-
+.hide:hover{
+  font-weight: bold;
+}
 .warning{
   text-align: center;
   color: #598;

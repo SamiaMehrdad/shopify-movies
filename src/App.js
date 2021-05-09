@@ -5,15 +5,25 @@
  Starting date: 5/7/2021
  Mehrdad Samia
 */
-import React , { useState } from 'react';
+import React , { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
 
+  // init hooks to keep states
+  // an empty array for search results
   const [searchResult, setSearchResult] = useState([]);
+  // an empty string for search word that will be shown in results title
   const [searchWord, setSearchWord] = useState('');
-  const [nominees, setNominees] = useState([]);
+  // an array of pre-saved nominees, if there is any
+  const [nominees, setNominees] = useState(localStorage.getItem("nominees")?
+                                            localStorage.getItem("nominees").split(',')
+                                           : []);
 
+  // using side effect hook to auto save nominees
+  useEffect(() => {
+    localStorage.setItem("nominees", nominees);
+  }, [nominees]);
   //----------------------------------
   // Async function to call API for search in titles and return json response
   //----------------------------------
@@ -32,16 +42,19 @@ function App() {
   //----------------------------------
   function formatedSearch( title )
   {
+    console.log(localStorage.getItem("nominees").split(','));
     if( title.length < 3 ) //searching for just 2 letters is useless 
     return;
     
     searchAPI( title ).then( resObj => {
       let result = [];
+      console.log(nominees);
       if( resObj.Search )
       resObj.Search.map( movie => {
               // API returns duplicated results that should be filtered
-              if( result.indexOf(movie) < 0 ) // check if movie already is not in the result
-              {
+              if( result.indexOf(movie) < 0  // check if movie already is not in the result
+               && nominees.indexOf(movie) < 0 ) // also check if it is not previously nominated
+              { ///TODO BUG: Second condition Not working
                 // movie title should be limited to 40 characters + '...'
                 let data = stringLimiter(movie.Title, 36) + ' (' + movie.Year + ')';
                 result.push(data);
@@ -77,7 +90,7 @@ function App() {
       setNominees( [...nominees, item] );
       const index = searchResult.indexOf(item);
       searchResult.splice(index,1);
-      setSearchResult([...searchResult])  ;
+      setSearchResult([...searchResult]);
     }
     // console.log(nominees, searchResult);
   }
@@ -92,7 +105,8 @@ function App() {
     setNominees([...nominees]);
     //add item back to searchResult list
     setSearchResult( [...searchResult, item] );
-    console.log(nominees, searchResult);
+    
+    //console.log(nominees, searchResult);
   }
   //-----------------------------------------------------------------------------
   return (
