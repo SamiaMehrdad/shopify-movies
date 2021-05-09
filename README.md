@@ -16,11 +16,12 @@
 - Display a banner when the user has 5 nominations.
 - Nominees will be saved and protected if user close or refresh the page.
 
-Link to the live version of [Shoppies Movies](https://shoppiesmovies.herokuapp.com/) hosted by Heroku.
+Link to the live version of **[Shoppies Movies](https://shoppiesmovies.herokuapp.com/)** hosted by Heroku.
 
 ## Technical aspects
 - Using React 17.0.2.
 - No external React components.
 - Pure CSS, no external frameworks.
+- Unicode character icons.
 
 
