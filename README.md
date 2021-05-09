@@ -29,4 +29,4 @@ Link to the live version of **[Shoppies Movies](https://shoppiesmovies.herokuapp
 - I have changed UX/UI from the original project requirement a bit. Now, after nominating an item, that will disappear from the search list, even for new queries.
 --- 
 <br/>
-** The project started on 5/7/21, and the working version was uploaded on 5/9/21. Thanks, Shopify team, for the opportunity. **
+*The project started on 5/7/21, and the working version was uploaded on 5/9/21. Thanks, Shopify team, for the opportunity.
