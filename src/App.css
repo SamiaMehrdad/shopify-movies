@@ -31,7 +31,7 @@ h4{
   width: 80%;
   font-size: calc(10px + 1.5vmin);
   margin: 5vh auto;
-  text-shadow: 0 0 2px #000;
+  text-shadow: 0 0 8px #333;
   /* background-color: rgba(0,0,0,.2); */
 }
 
@@ -54,7 +54,6 @@ h4{
   height: 75%;
   overflow-y: auto;
   font-size: calc(6px + 1.4vmin);
-  transition: all 1s ease;
 }
 
 .round{

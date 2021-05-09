@@ -24,6 +24,7 @@ function App() {
   useEffect(() => {
     localStorage.setItem("nominees", nominees);
   }, [nominees]);
+  
   //----------------------------------
   // Async function to call API for search in titles and return json response
   //----------------------------------
