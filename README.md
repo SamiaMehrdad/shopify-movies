@@ -26,8 +26,7 @@ Link to the live version of **[Shoppies Movies](https://shoppiesmovies.herokuapp
 - Mobile-friendly ( Not optimized for all devices )
  
 ## Note
-
-I have changed UX/UI from the original project requirement a bit. Now, after nominating an item, that will disappear from the search list, even for new queries.
+- I have changed UX/UI from the original project requirement a bit. Now, after nominating an item, that will disappear from the search list, even for new queries.
 --- 
 <br/>
 ** The project started on 5/7/21, and the working version was uploaded on 5/9/21. Thanks, Shopify team, for the opportunity. **
