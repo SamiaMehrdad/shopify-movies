@@ -3,6 +3,6 @@
 
 <br/><br/>
 
-![App screenshot](sm1.png)
+![App screenshot](sm1.png) 
 <br/><br/>
 
