@@ -1,6 +1,11 @@
+@keyframes zoomIn {
+  from{ transform: scaleX(0);}
+  to{ transform: none;}
+}
+
 body{
-  background-color: #bbb;
-  /* background-image: url(bg1.png); */
+  /* background-color: #bbb; */
+  background-image: url(bg1.png); 
   align-items: center;
   outline: none;
   user-select: none;
@@ -109,15 +114,50 @@ h4{
   text-shadow: 0 0 4px #fff;
   animation: zoomIn .7s;
 }
-@keyframes zoomIn {
-  from{ transform: scaleX(0);}
-  to{ transform: none;}
-}
+
 #footer{
   color: #ddd;
   font-size: calc(6px + 1.4vmin);
   text-align: center;
   text-shadow: none;
+}
+
+/* Detect touchscreen devices */
+@media (pointer:none), (pointer:coarse) {
+  .App{
+    width: 95%;
+    margin: 0;
+  }
+ .hide{
+  background-color: var(--green);
+  color: #fff;
+  border-radius: 99999px;
+  font-size:  calc(6px + 1vmin);
+  padding: .4vh ;
+ }
+  .inner{
+  font-size: calc(6px + 1.5vh);
+  }
+}
+
+ @media screen and (orientation:portrait) { 
+  .half{
+    width: 100%;
+  }
+  .App{
+    padding: 0;
+  }
+  .App div{
+    border: none;
+    margin: 0 0 1vh 1vh;
+    padding: .2vh 0 0 .2vh;
+  }
+  input{
+  padding: .5vh 0;
+  font-size: calc(10px + 1.5vmin);
+  width: 75%;
+  }
+
 }
 /* Formatting scrollbar for Chrome, Edge, Safari */
 div::-webkit-scrollbar {

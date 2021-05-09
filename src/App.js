@@ -112,7 +112,7 @@ function App() {
   //-----------------------------------------------------------------------------
   return (
     <div className="App">
-    <h2>The Shoppies</h2>
+    <h2> The Shoppies</h2>
     <div className="shaded">
       <h4>Movie title</h4>
       

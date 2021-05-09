@@ -23,5 +23,6 @@ Link to the live version of **[Shoppies Movies](https://shoppiesmovies.herokuapp
 - No external React components.
 - Pure CSS, no external frameworks.
 - Unicode character icons.
+- Mobile friendly ( Not optimized for all devices )
 
 
