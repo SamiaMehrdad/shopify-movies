@@ -9,25 +9,6 @@ body{
   --dark: rgba(0,0,0,.2);
 }
 
-div::-webkit-scrollbar {
-  width: 1vh;
-  border-radius: 1vh; 
-}
-
-div::-webkit-scrollbar-track {
-  border-radius: 1vh; 
-}
-
-div::-webkit-scrollbar-thumb {
-  background: var(--dark);
-  border-radius: 1vh;       
-}
-
-
-div{
-  scrollbar-width: 1vh;
-  scrollbar-color:  #eee var(--main);
-}
 input{
   background: none;
   margin: 0;
@@ -35,21 +16,21 @@ input{
   padding: .5vh 0;
   outline: none;
   font-size: calc(10px + 1.5vmin);
+  width: 95%;
 }
+
 h4{
-  margin: 1vh;
-  /* color: var(--green); */
-  /* text-shadow: 0 1px 4px #333; */
+  margin: 0 1vh ;
 }
 .App {
   text-align: left;
   height: 100vh;
-  color: #111;
+  color: #eee;
   padding: 4vh;
   width: 80%;
   font-size: calc(10px + 1.5vmin);
   margin: 5vh auto;
-  /* border: 1px solid blue; */
+  text-shadow: 0 0 2px #000;
 }
 
 .App div{
@@ -58,29 +39,29 @@ h4{
   padding: 1vh;
   border-radius: 2vh;
   border: 1px solid rgba(0,0,0,.2);
+  color: #333;
+  text-shadow: none;
 }
 
 .half{
   width: 47%;
   display: inline-block;
-  /* outline: 1px solid blue; */
 }
 
 .inner{
   height: 75%;
   overflow-y: auto;
-  /* border: 1px solid rgba(0,0,0,.2); */
-  /* border-radius: none;  */
   font-size: calc(6px + 1.4vmin);
 }
+
 .round{
   border-radius: 99999px;
 }
 
 .border{
   border: 1px solid rgba(0,0,0,.4);
-  /* border: 1px solid #eee; */
 }
+
 .short{
   height: 40%;
   display: inline-block;
@@ -98,7 +79,6 @@ h4{
 
 .nombar:hover{
   background-color: #eee;
-  /* border-bottom: 1px solid #0a8; */
 }
 
 .nombar:hover > .hide{
@@ -117,12 +97,34 @@ h4{
 
 .warning{
   text-align: center;
-  /* background-color: #bbb; */
-  /* border: 1px solid; */
   color: #598;
-  /* padding: 1.8vh; */
   margin: 3vh 0 0;
-  /* border-radius: 2vh; */
   font-weight: bold;
   text-shadow: 0 0 4px #fff;
+}
+
+#footer{
+  color: #ddd;
+  font-size: calc(6px + 1.4vmin);
+  text-align: center;
+  text-shadow: none;
+}
+/* Formatting scrollbar for Chrome, Edge, Safari */
+div::-webkit-scrollbar {
+  width: 1vh;
+  border-radius: 1vh; 
+}
+
+div::-webkit-scrollbar-track {
+  border-radius: 1vh; 
+}
+
+div::-webkit-scrollbar-thumb {
+  background: var(--dark);
+  border-radius: 1vh;       
+}
+/* Formatting scrollbar for Firefox */
+div{
+  scrollbar-width: 1vh;
+  scrollbar-color:  var(--dark) var(--main);
 }

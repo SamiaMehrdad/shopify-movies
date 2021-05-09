@@ -1,3 +1,10 @@
+/*
+ Project: Shopify frontend internship apply challenge - 2021
+ CSS framework used: none
+ External components used: none
+ Starting date: 5/7/2021
+ Mehrdad Samia
+*/
 import React , { useState } from 'react';
 import './App.css';
 
@@ -12,7 +19,7 @@ function App() {
   //----------------------------------
   async function searchAPI( title )
   {
-    const OMDB_URL = "http://www.omdbapi.com/?apikey=27c4a699&type=movie&s="; // base URL for calling OMDB API
+    const OMDB_URL = "https://www.omdbapi.com/?apikey=27c4a699&type=movie&s="; // base URL for calling OMDB API
     const movieTitle = title.replace(' ', '+'); // API call needs '+' instead of space. OMDB docs
     const res = await fetch( OMDB_URL+movieTitle )
     if(res.ok) 
@@ -87,7 +94,7 @@ function App() {
     setSearchResult( [...searchResult, item] );
     console.log(nominees, searchResult);
   }
-  //-----------------------------------------
+  //-----------------------------------------------------------------------------
   return (
     <div className="App">
     <h2>The Shoppies</h2>
@@ -150,7 +157,8 @@ function App() {
           : null
         }
         </div>
-    </div>  
+    </div>
+    <p id="footer">Shopify frontend internship challenge project (React) by Mehrdad Samia - 2021 </p>  
   </div>
   );
 }
