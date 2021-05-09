@@ -78,7 +78,6 @@ h4{
   padding: 2px 0;
   border-radius: 9999px;
   animation: zoomIn .2s;
-  /* transition: all .1s ease; */
 }
 
 .nombar:hover{
@@ -108,7 +107,7 @@ h4{
   margin: 3vh 0 0;
   font-weight: bold;
   text-shadow: 0 0 4px #fff;
-  animation: zoomIn 1s;
+  animation: zoomIn .7s;
 }
 @keyframes zoomIn {
   from{ transform: scaleX(0);}

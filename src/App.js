@@ -131,7 +131,7 @@ function App() {
       </div>
     </div>
     <div className="half shaded short">
-      <h4>Results for '{searchWord}'</h4>
+      <h4>Results {searchWord.length > 2 ? `for '${searchWord}'` : null }</h4>
       <div className="inner">
         {searchResult.length? searchResult.map(
                     (item) => 
